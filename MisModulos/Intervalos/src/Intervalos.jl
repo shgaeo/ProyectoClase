@@ -6,7 +6,7 @@ import Base.show
 import Base.+,Base.-,Base.*,Base./,Base.^,Base.==,Base.in
 import Base.exp, Base.log, Base.atan, Base.asin, Base.acos
 
-export Intervalo, redonUP, redonDOWN
+export Intervalo, redonUP, redonDOWN, uNir, iNtersectar
 
 type Intervalo
     a::BigFloat
@@ -103,5 +103,9 @@ asin(x::Intervalo)=
 acos(x::Intervalo)=
         x.a<-1||x.b>1 ? error("Función acos solo acepta números entre -1 y 1 \n") : Intervalo(redonDOWN(acos,x.b),redonUP(acos,x.a))
 ^(x::Intervalo,y)=exp(y*log(x))
+
+uNir(x::Intervalo,y::Intervalo) = (x.a<=y.b && y.a<=x.b) ? Intervalo(min(x.a,y.a),max(x.b,y.b)) : return("Deben ser intervalos que se intersectan")
+iNtersectar(x::Intervalo,y::Intervalo) = (x.a<=y.b && y.a<=x.b) ? Intervalo(max(x.a,y.a),min(x.b,y.b)) : return("Deben ser intervalos que se intersectan")
+
 
 end
