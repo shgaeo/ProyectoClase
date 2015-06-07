@@ -514,8 +514,10 @@ function graficarEulerM(tinicial,xinicial,nuevaListaXstotal,x_RK,t0,tf,n,dt,paso
         PyPlot.xlim([t0,tinicial[end]+n_extra*dt]); 
     end     
 end
+
 graficarEulerM(tinicial,xinicial,nuevaListaXstotal,x_RK,t0,tf,n,dt,pasosdeintegracion)=graficarEulerM(tinicial,xinicial,nuevaListaXstotal,x_RK,t0,tf,n,dt,pasosdeintegracion,true)
 
 
 
 end
+

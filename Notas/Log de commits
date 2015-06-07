@@ -1,0 +1,18 @@
+Logs de Ernesto:
+
+Ernesto_001: módulo con RungeKutta.jl con los métodos Runge kutta 2 y 4 para sacar z0 y con eso sacar T' de la condición 6.9 de Tucker. Se explica más en el Notebook Runge KUtta2-4 para numeros.ipynb
+
+Ernesto_002: conjuntar y nadamás
+
+Ernesto_003: Intenté extender para mayores tiempos reiniciando el algoritmo (BuscarTBuena) luego de dar un paso de integración pero se tarda años. También hice PrimerOrden.jl que engloba todo lo hecho hasta ahorita.
+
+
+Ernesto_004: Añadí las funciones NEuler1Paso, NEulerMPasos y graficarEulerM al módulo PrimerOrden.jl. Estos resumen el  trabajo para extender el método de integración a M pasos (aunque si el primer paso tiene longitud T, los demás pasos tienen longitud Ti<T y llega un punto donde Ti=0)
+
+Ernesto_005: deltaT <------> ordenK en el módulo PrimerOrden.jl.
+graficarEulerM ahora tiene una opción para no sacar la gráfica del método de runge kutta completa, sólo un pedazo
+
+Ernesto_006: Resumen.ipynb <------>ResumenPrimerOrden.ipynb
+Me rindo intentar alcanzar más tiempos
+
+Ernesto_007: Agruegé presentación, resumen, etc..

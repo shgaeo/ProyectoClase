@@ -55,13 +55,15 @@ export RungeKutta2, RungeKutta4, zetacero, BuscarTBuena
         #hasta ahora siempre t0=0
         t0=0.0;
         x_RK=RungeKutta4(t0,x0,h,n,F);
-        zz=Intervalo(minimum(x_RK),maximum(x_RK)); 
-        return(Intervalo(zz.a-0.001*(zz.b-zz.a) , zz.b+0.001*(zz.b-zz.a)))
+        zz=Intervalo(minimum(x_RK),maximum(x_RK));
+        #return(Intervalo(zz.a-0.001*(zz.b-zz.a) , zz.b+0.001*(zz.b-zz.a)))
+        return(Intervalo(zz.a-(2.0^-10)*(zz.b-zz.a) , zz.b+(2.0^-10)*(zz.b-zz.a)))
     end
 
 
     function zetacero(zz::Intervalo) 
-        return(Intervalo(zz.a-0.0001*(zz.b-zz.a) , zz.b+0.0001*(zz.b-zz.a)))
+        #return(Intervalo(zz.a-0.0001*(zz.b-zz.a) , zz.b+0.0001*(zz.b-zz.a)))
+        return(Intervalo(zz.a-(2.0^-13)*(zz.b-zz.a) , zz.b+(2.0^-13)*(zz.b-zz.a)))
     end
 
         
