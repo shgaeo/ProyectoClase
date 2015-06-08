@@ -40,7 +40,7 @@ function graficaCono(tI,tF,x0,zk::Intervalo,col::ASCIIString)
     return nothing
 end
 
-graficaCono(tI,tF,x0,zk::Intervalo)=graficaCono(tI,tF,x0,zk,"lightblue")
+graficaCono(tI,tF,x0,zk::Intervalo)=graficaCono(tI,tF,x0,zk,"blue")
 
 
 function conosInterv(tI,tF,x0::Intervalo,f::Function)
@@ -82,8 +82,8 @@ function graficaCono(tI,tF,x0::Intervalo,zk::Intervalo,lineas::Bool,col::ASCIISt
     end
     return nothing
 end
-graficaCono(tI,tF,x0::Intervalo,zk::Intervalo)=graficaCono(tI,tF,x0,zk,false,"lightblue")
-graficaCono(tI,tF,x0::Intervalo,zk::Intervalo,lineas::Bool)=graficaCono(tI,tF,x0,zk,lineas,"lightblue")
+graficaCono(tI,tF,x0::Intervalo,zk::Intervalo)=graficaCono(tI,tF,x0,zk,false,"blue")
+graficaCono(tI,tF,x0::Intervalo,zk::Intervalo,lineas::Bool)=graficaCono(tI,tF,x0,zk,lineas,"blue")
 graficaCono(tI,tF,x0::Intervalo,zk::Intervalo,col::ASCIIString)=graficaCono(tI,tF,x0,zk,false,col)
 #function graficaCono(tI,tF,x0::Intervalo,zk::Intervalo,col::ASCIIString)
 #    PyPlot.fill_between([tI,tF],Float64[x0.a,zk.a],Float64[x0.b,zk.b],color=col)
@@ -126,7 +126,7 @@ function graficaEnvolvente(tI,tF,x0,envolv::Array{Intervalo,1},col::ASCIIString)
     return nothing
 end
 
-graficaEnvolvente(tI,tF,x0,envolv::Array{Intervalo,1})=graficaEnvolvente(tI,tF,x0,envolv,"lightblue")
+graficaEnvolvente(tI,tF,x0,envolv::Array{Intervalo,1})=graficaEnvolvente(tI,tF,x0,envolv,"blue")
 
 
 
@@ -500,7 +500,7 @@ colores=[cnames[2*i+1] for i in 0:length(cnames)/2-1];
 function graficarEulerM(tinicial,xinicial,nuevaListaXstotal,x_RK,t0,tf,n,dt,pasosdeintegracion,graficartodoRungeKutta::Bool)
     pasosdeintegracion>140 && error("Te pasaste de colores")
     PyPlot.plot(linspace(t0,tf,n+1),x_RK,"red");
-    graficaEnvolvente(t0,tinicial[1],xinicial[1],nuevaListaXstotal[1],colores[1])
+    graficaEnvolvente(t0,tinicial[1],xinicial[1],nuevaListaXstotal[1],"blue")#colores[1])
     graficaEnvolvente(tinicial[1],tinicial[2],xinicial[2],nuevaListaXstotal[2],colores[2])
     println("el número máximo alcanzado con intervalos es: $(tinicial[end]) de $(tf)")    
     for i in 3:pasosdeintegracion
